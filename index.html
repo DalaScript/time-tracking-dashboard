@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>Time tracking dashboard | Frontend Mentor</title>
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+  <script src="./assets/main/main.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <article class="time-tracking-dashboard">
+        <section class="report-for">
+          <section class="report-for__person">
+            <picture>
+              <source media="(min-width: 1158px)" width="78" height="78" srcset="./assets/images/image-jeremy.png">
+              <img class="report-for__img" src="./assets/images/image-jeremy.png" width="64" height="64" alt="image of jeremy">
+            </picture>
+            <section class="report-for__text-content">
+              <p class="report-for__description">Report for</p>
+              <p class="report-for__name">Jeremy Robson</p>
+            </section>
+          </section>
+          <section class="report-for__time">
+            <button id="report-for__daily-btn" value="daily" class="report-for__time-btn">Daily</button>
+            <button id="report-for__weekly-btn" value="weekly" class="report-for__time-btn report-for__time-btn--active">Weekly</button>
+            <button id="report-for__monthly-btn" value="monthly" class="report-for__time-btn">Monthly</button>
+          </section>
+        </section>
+        <section class="card card--work">
+          <img class="card__icon-bg" src="./assets/images/icon-work.svg" alt="work">
+          <section class="card__inner-content">
+            <section class="card__inner-header">
+              <p class="card__title">Work</p>
+              <button class="card__btn">
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </button>
+            </section>
+            <section class="card__inner-body">
+              <p class="card__current"><span class="card__current-hours">32</span>hrs</p>
+              <p class="card__previous">Last Week - <span class="card__previous-hours">36</span>hrs</p>
+            </section>
+          </section>
+        </section>
+        <section class="card card--play">
+          <img class="card__icon-bg" src="./assets/images/icon-play.svg" alt="play">
+          <section class="card__inner-content">
+            <section class="card__inner-header">
+              <p class="card__title">Play</p>
+              <button class="card__btn">
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </button>
+            </section>
+            <section class="card__inner-body">
+              <p class="card__current"><span class="card__current-hours">10</span>hrs</p>
+              <p class="card__previous">Last Week - <span class="card__previous-hours">36</span>hrs</p>
+            </section>
+          </section>
+        </section>
+        <section class="card card--study">
+          <img class="card__icon-bg" src="./assets/images/icon-study.svg" alt="study">
+          <section class="card__inner-content">
+            <section class="card__inner-header">
+              <p class="card__title">Study</p>
+              <button class="card__btn">
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </button>
+            </section>
+            <section class="card__inner-body">
+              <p class="card__current"><span class="card__current-hours">4</span>hrs</p>
+              <p class="card__previous">Last Week - <span class="card__previous-hours">7</span>hrs</p>
+            </section>
+          </section>
+        </section>
+        <section class="card card--exercise">
+          <img class="card__icon-bg" src="./assets/images/icon-exercise.svg" alt="exercise">
+          <section class="card__inner-content">
+            <section class="card__inner-header">
+              <p class="card__title">Exercise</p>
+              <button class="card__btn">
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </button>
+            </section>
+            <section class="card__inner-body">
+              <p class="card__current"><span class="card__current-hours">4</span>hrs</p>
+              <p class="card__previous">Last Week - <span class="card__previous-hours">5</span>hrs</p>
+            </section>
+          </section>
+        </section>
+        <section class="card card--social">
+          <img class="card__icon-bg" src="./assets/images/icon-social.svg" alt="social">
+          <section class="card__inner-content">
+            <section class="card__inner-header">
+              <p class="card__title">Social</p>
+              <button class="card__btn">
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </button>
+            </section>
+            <section class="card__inner-body">
+              <p class="card__current"><span class="card__current-hours">5</span>hrs</p>
+              <p class="card__previous">Last Week - <span class="card__previous-hours">10</span>hrs</p>
+            </section>
+          </section>
+        </section>
+        <section class="card card--self-care">
+          <img class="card__icon-bg" src="./assets/images/icon-self-care.svg" alt="self-care">
+          <section class="card__inner-content">
+            <section class="card__inner-header">
+              <p class="card__title">Self Care</p>
+              <button class="card__btn">
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </button>
+            </section>
+            <section class="card__inner-body">
+              <p class="card__current"><span class="card__current-hours">2</span>hrs</p>
+              <p class="card__previous">Last Week - <span class="card__previous-hours">2</span>hrs</p>
+            </section>
+          </section>
+        </section>
+    </article>
+  </main>
+</body>
+</html>

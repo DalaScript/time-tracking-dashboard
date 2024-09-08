@@ -1,0 +1,358 @@
+// Colors
+// Primary
+$blue: #5747EA;
+$light-orange: #FF8B64;
+$soft-blue: #55C2E6;
+$light-red: #FF5E7D;
+$lime-green: #4BCF82;
+$violet: #7335D2;
+$soft-orange: #F1C75B;
+// Neutral
+$very-dark-blue: #0f1424;
+$dark-blue: #1C204B;
+$desaturated-blue: #7078C9;
+$pale-blue: #BBC0FF;
+$white: #FFFFFF;
+
+/*
+ * Global Variables
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: $very-dark-blue;
+    
+    li {
+        list-style: none;
+    }
+
+    picture {
+        display: flex;
+    }
+}
+
+// Body Elements
+main {
+    padding: 81px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-tracking-dashboard {
+    max-width: 327px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.report-for {
+    width: 100%;
+    border-radius: 15px;
+    background-color: $dark-blue;
+
+    &__person {
+        padding: 35px 39px 34px 32px;
+        border-radius: 15px;
+        background-color: $blue;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__img {
+        outline: 3px solid $white;
+        border-radius: 50%;
+    }
+
+    &__description {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+
+        color: $pale-blue;
+    }
+
+    &__name {
+        margin-top: 4px;
+
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 28px;
+
+        color: $white;
+    }
+
+    &__time {
+        padding: 24px 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__time-btn {
+        background-color: transparent;
+        border: none;
+
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+
+        color: $desaturated-blue;
+
+        transition: color .5s ease-out;
+
+        &--active {
+            color: $white;
+        }
+    }
+}
+
+.card {
+    padding-top: 38px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+
+    position: relative;
+
+    &__icon-bg {
+        position: absolute;
+        top: -11px;
+        right: 17.5px;
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &--work::before {
+        background-color: $light-orange;
+    }
+
+    &--play::before {
+        background-color: $soft-blue;
+    }
+
+    &--study::before {
+        background-color: $light-red;
+    }
+
+    &--exercise {
+        &::before {
+            background-color: $lime-green;
+        }
+        .card__icon-bg {
+            top: 0px;
+        }
+    }
+
+    &--social::before {
+        background-color: $violet;
+    }
+    
+    &--self-care::before {
+        background-color: $soft-orange;
+    }
+
+    &__inner-content {
+        padding: 28px 24px;
+        width: 100%;
+        background-color: $dark-blue;
+
+        border-radius: 15px;
+        position: relative;
+    }
+
+    &__inner-header {
+        padding-bottom: 1px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+
+        color: $white;
+    }
+
+    &__btn {
+        border: none;
+        background-color: transparent;
+        display: flex;
+    }
+
+    &__inner-body {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__current {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 38px;
+
+        color: $white;
+    }
+
+    &__previous {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: right;
+
+        color: $pale-blue;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    button {
+        cursor: pointer;
+    }
+
+    .report-for {
+        &__time-btn {
+            transition: color .5s ease-out;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .card {
+        &__inner-content {
+            transition: background-color .5s ease-out;
+            &:hover:not(:has(.card__btn:hover)) {
+                background-color: #33397A;
+                cursor: pointer;
+              }
+        }
+
+        &__btn {
+            svg {
+                path {
+                    transition: fill .5s ease-out;
+                }
+            }
+
+            &:hover {
+                path {
+                    fill: #D8D8D8;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+    main {
+        height: 100vh;
+    }
+
+    .time-tracking-dashboard {
+        max-width: 1110px;
+        display: grid;
+        grid-template-areas: 
+        'report-for work play study'
+        'report-for exercise social self-care';
+        gap: 30px;
+    }
+
+    .report-for {
+        max-width: 255px;
+        width: 100%;
+        grid-area: report-for;
+
+        &__person {
+            padding: 37px 84px 80px 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 43px;
+        }
+
+        &__time {
+            padding: 26px 32px 33px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 21px;
+        }
+
+        &__name {
+            padding-bottom: 1px;
+            margin-top: 3px;
+            font-size: 40px;
+            line-height: 47px;
+        }
+    }
+
+    .card {
+        padding-top: 45px;
+        width: 255px;
+
+        &--work {
+            grid-area: work;
+        }
+        &--play {
+            grid-area: play;
+        }
+        &--study {
+            grid-area: study;
+        }
+        &--exercise {
+            grid-area: exercise;
+        }
+        &--social {
+            grid-area: social;
+        }
+        &--self-care {
+            grid-area: self-care;
+        }
+
+        &_inner-content {
+            padding: 29px 30px 32px 30px;
+        }
+
+        &__inner-body {
+            margin-top: 24px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        &__current {
+            font-size: 56px;
+            line-height: 66px;
+        }
+    }
+}

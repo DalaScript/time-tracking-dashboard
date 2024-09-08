@@ -1,0 +1,284 @@
+/*
+ * Global Variables
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #0f1424;
+}
+html li,
+body li {
+  list-style: none;
+}
+html picture,
+body picture {
+  display: flex;
+}
+
+main {
+  padding: 81px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-tracking-dashboard {
+  max-width: 327px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.report-for {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #1C204B;
+}
+.report-for__person {
+  padding: 35px 39px 34px 32px;
+  border-radius: 15px;
+  background-color: #5747EA;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.report-for__img {
+  outline: 3px solid #FFFFFF;
+  border-radius: 50%;
+}
+.report-for__description {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #BBC0FF;
+}
+.report-for__name {
+  margin-top: 4px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+.report-for__time {
+  padding: 24px 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.report-for__time-btn {
+  background-color: transparent;
+  border: none;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #7078C9;
+  transition: color 0.5s ease-out;
+}
+.report-for__time-btn--active {
+  color: #FFFFFF;
+}
+
+.card {
+  padding-top: 38px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.card__icon-bg {
+  position: absolute;
+  top: -11px;
+  right: 17.5px;
+}
+.card::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card--work::before {
+  background-color: #FF8B64;
+}
+.card--play::before {
+  background-color: #55C2E6;
+}
+.card--study::before {
+  background-color: #FF5E7D;
+}
+.card--exercise::before {
+  background-color: #4BCF82;
+}
+.card--exercise .card__icon-bg {
+  top: 0px;
+}
+.card--social::before {
+  background-color: #7335D2;
+}
+.card--self-care::before {
+  background-color: #F1C75B;
+}
+.card__inner-content {
+  padding: 28px 24px;
+  width: 100%;
+  background-color: #1C204B;
+  border-radius: 15px;
+  position: relative;
+}
+.card__inner-header {
+  padding-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+.card__btn {
+  border: none;
+  background-color: transparent;
+  display: flex;
+}
+.card__inner-body {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__current {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 38px;
+  color: #FFFFFF;
+}
+.card__previous {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: right;
+  color: #BBC0FF;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  button {
+    cursor: pointer;
+  }
+
+  .report-for__time-btn {
+    transition: color 0.5s ease-out;
+  }
+  .report-for__time-btn:hover {
+    color: #FFFFFF;
+  }
+
+  .card__inner-content {
+    transition: background-color 0.5s ease-out;
+  }
+  .card__inner-content:hover:not(:has(.card__btn:hover)) {
+    background-color: #33397A;
+    cursor: pointer;
+  }
+  .card__btn svg path {
+    transition: fill 0.5s ease-out;
+  }
+  .card__btn:hover path {
+    fill: #D8D8D8;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  main {
+    height: 100vh;
+  }
+
+  .time-tracking-dashboard {
+    max-width: 1110px;
+    display: grid;
+    grid-template-areas: "report-for work play study" "report-for exercise social self-care";
+    gap: 30px;
+  }
+
+  .report-for {
+    max-width: 255px;
+    width: 100%;
+    grid-area: report-for;
+  }
+  .report-for__person {
+    padding: 37px 84px 80px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 43px;
+  }
+  .report-for__time {
+    padding: 26px 32px 33px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+  }
+  .report-for__name {
+    padding-bottom: 1px;
+    margin-top: 3px;
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .card {
+    padding-top: 45px;
+    width: 255px;
+  }
+  .card--work {
+    grid-area: work;
+  }
+  .card--play {
+    grid-area: play;
+  }
+  .card--study {
+    grid-area: study;
+  }
+  .card--exercise {
+    grid-area: exercise;
+  }
+  .card--social {
+    grid-area: social;
+  }
+  .card--self-care {
+    grid-area: self-care;
+  }
+  .card_inner-content {
+    padding: 29px 30px 32px 30px;
+  }
+  .card__inner-body {
+    margin-top: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .card__current {
+    font-size: 56px;
+    line-height: 66px;
+  }
+}

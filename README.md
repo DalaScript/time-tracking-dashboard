@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/NikaDalalishvili/time-tracking-dashboard)
-- [Live Site URL](https://nikadalalishvili.github.io/time-tracking-dashboard/)
+- [Solution URL](https://github.com/DalaScript/time-tracking-dashboard)
+- [Live Site URL](https://DalaScript.github.io/time-tracking-dashboard/)
 
 ## My process
 
